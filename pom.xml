@@ -83,12 +83,15 @@
 
 </dependencies>
 
+
+
+
 <profiles>
 
 
  
 <profile> 
-<id>batch</id>
+<id>Batch</id>
 <build>
 <plugins>
     <plugin>
@@ -106,7 +109,7 @@
 </profile>
 
 <profile> 
-<id>distributed</id>
+<id>Distributed</id>
 <build>
 <plugins>
     <plugin>
@@ -116,6 +119,25 @@
         <configuration>
           <suiteXmlFiles>
             <suiteXmlFile>testng_DistributedParalleExecutionl.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+    </plugins>
+</build>
+</profile>
+
+
+<profile> 
+<id>Regression</id>
+<build>
+<plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M7</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng_regressionSuite.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
@@ -143,11 +165,69 @@
 
 
 
+<profile>  
+<id>Smoke</id>
+<build>
+<plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M7</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng_smokeSuite.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+    </plugins>
+</build>
+</profile>
+
+<profile> 
+<id>CrossBrowser</id>
+<build>
+<plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M7</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng_CrossBrowserExecution.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+    </plugins>
+</build>
+</profile>
+
+
+
+
+
 
 
 
 
 </profiles>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -170,4 +250,25 @@
 
 
   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  </project>
